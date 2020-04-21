@@ -1,0 +1,10 @@
+const FONT_SIZE_DEFAULT = 12;
+const GOLDEN_RATIO = 1.61803398875;
+
+export const Typography = {
+  smaller: FONT_SIZE_DEFAULT / GOLDEN_RATIO,
+  default: FONT_SIZE_DEFAULT,
+  stronger: FONT_SIZE_DEFAULT + 4,
+  medium: FONT_SIZE_DEFAULT * GOLDEN_RATIO,
+  large: FONT_SIZE_DEFAULT * GOLDEN_RATIO * GOLDEN_RATIO
+};
