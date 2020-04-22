@@ -2,9 +2,12 @@ import React from "react";
 import { Text, StyleSheet, TouchableHighlight, View } from "react-native";
 import { Typography, Colors } from "../themes";
 import SvgUri from "react-native-svg-uri";
+import { Discover } from "../@domain";
 
 const styles = StyleSheet.create({
   container: {
+    margin: 6,
+    flex: 1,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -14,9 +17,7 @@ const styles = StyleSheet.create({
   },
   touchable: {
     backgroundColor: "#fff",
-    marginRight: 12,
     borderRadius: 6,
-    width: 148,
     padding: 10,
   },
   wrapper: {
@@ -29,7 +30,9 @@ const styles = StyleSheet.create({
   subtitle: {},
 });
 
-export function DiscoverItem() {
+export function DiscoverItem(props: Discover) {
+  const { id, title, countPlace, imgCover, endPoint } = props;
+
   return (
     <View style={styles.container}>
       <TouchableHighlight
@@ -44,8 +47,8 @@ export function DiscoverItem() {
             height="100"
             source={require("../../assets/icons/covered-food-plate.svg")}
           />
-          <Text style={styles.title}>Bars & Hotels</Text>
-          <Text style={styles.subtitle}>28 Place</Text>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{countPlace} Place</Text>
         </View>
       </TouchableHighlight>
     </View>

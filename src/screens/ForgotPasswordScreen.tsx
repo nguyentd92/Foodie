@@ -21,9 +21,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
     fontWeight: "700",
-    color: Colors.dark
+    color: Colors.dark,
+  },
+  pageTitle: {
+    textAlign: "center",
+    color: Colors.medium,
+    fontWeight: "600",
   },
   loginButton: {
+    marginTop: 32,
     backgroundColor: Colors.accentVariant,
     borderRadius: 2,
     shadowColor: Colors.medium,
@@ -41,46 +47,26 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
   },
   input: {
+    marginTop: 48,
     marginVertical: 12,
-  },
-  forgotPwWrapper: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    marginTop: 12,
-    marginBottom: 32,
-  },
-  forgotPw: {
-    position: "relative",
-    right: 0,
-  },
-  forgotPwText: {
-    color: Colors.pearl,
   },
 });
 
-export function LoginScreen() {
+export function ForgotPasswordScreen() {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
     <View style={styles.pageContainer}>
-      <Text style={styles.loginTitle}>Log in</Text>
+      <Text style={styles.loginTitle}>Forgot Password?</Text>
+      <Text style={styles.pageTitle}>Please enter your email</Text>
 
       <TextInput
         style={[inputStyles.default, styles.input]}
-        placeholder="Username"
+        placeholder="Email"
       ></TextInput>
-      <TextInput
-        style={[inputStyles.default, styles.input]}
-        placeholder="Password"
-      ></TextInput>
-      <View style={styles.forgotPwWrapper}>
-        <TouchableOpacity style={styles.forgotPw} onPress={() => {}}>
-          <Text style={styles.forgotPwText}>Forgot Password?</Text>
-        </TouchableOpacity>
-      </View>
 
       <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Login</Text>
+        <Text style={styles.loginButtonText}>Submit</Text>
       </TouchableOpacity>
     </View>
   );

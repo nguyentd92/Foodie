@@ -1,1 +1,2 @@
-export * from './Restaurant'
+export * from "./restaurant.model";
+export * from "./discover.model";

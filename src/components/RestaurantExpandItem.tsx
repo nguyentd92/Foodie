@@ -77,40 +77,29 @@ const thumbnail = <Image
       />
 
 interface IRestaurantItemProps {
-  thumbnailMode?: boolean
+  thumbnailMode?: boolean,
+  data: Restaurant
 }
 
 export function RestaurantExpandItem(props: IRestaurantItemProps) {
 
-  const {thumbnailMode} = props
 
-  const [item, setItem] = useState<Restaurant>({
-    id: 1,
-    name: "Sushi Car",
-    imgCover: "/assets/images/full-grill-full-of-meat-and-veggies.jpg",
-    address: "20 Queen Street",
-    timeClosed: "11:00 PM",
-    timeOpened: "11:00 AM",
-    rating: 4.0,
-  });
+  const {thumbnailMode, data} = props
 
   return (
     <View style={styles.container}>
-      {
-        thumbnailMode ? thumbnail : null
-      }
-    
+      {thumbnailMode ? thumbnail : null}
 
       <View style={styles.detailsWrapper}>
-        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.openingTime}>
-          {item.timeOpened} to {item.timeClosed}
+          {data.timeOpened} to {data.timeClosed}
         </Text>
-        <Text style={styles.address}>{item.address}</Text>
+        <Text style={styles.address}>{data.address}</Text>
       </View>
 
       <View style={styles.ratingWrapper}>
-        <Text style={styles.ratingText}>4.0</Text>
+        <Text style={styles.ratingText}>{data.rating}</Text>
       </View>
 
       {bookmarkIcon}
