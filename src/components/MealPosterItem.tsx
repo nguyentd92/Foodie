@@ -9,6 +9,8 @@ const PADDING = 12;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    margin: 6,
     shadowColor: Colors.medium,
     shadowOpacity: 0.6,
     shadowOffset: {
@@ -17,8 +19,6 @@ const styles = StyleSheet.create({
     },
   },
   background: {
-    width: 148,
-    marginRight: PADDING,
     height: HEIGHT,
     borderRadius: 6,
     overflow: "hidden",
@@ -41,7 +41,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export function MealPosterItem() {
+export function MealPosterItem(props: any) {
+  const {data} = props
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -53,8 +55,8 @@ export function MealPosterItem() {
           colors={["transparent", Colors.dark]}
         >
           <View style={styles.bar}></View>
-          <Text style={styles.title}>Greek Style</Text>
-          <Text style={styles.place}>34 Places</Text>
+          <Text style={styles.title}>{data?.name}</Text>
+          <Text style={styles.place}>{data?.countPlace} Places</Text>
         </LinearGradient>
       </ImageBackground>
     </View>

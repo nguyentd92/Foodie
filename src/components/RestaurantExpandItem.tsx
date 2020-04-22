@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { Typography, Colors } from "../themes";
 
-const THUMBNAIL_SIDE = 120;
+const THUMBNAIL_SIDE = 96;
 const PADDING = 12
 
 const styles = StyleSheet.create({
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
     width: THUMBNAIL_SIDE,
-    height: (THUMBNAIL_SIDE * 4) / 5,
+    height: THUMBNAIL_SIDE,
     borderRadius: 6,
     marginRight: PADDING,
   },
