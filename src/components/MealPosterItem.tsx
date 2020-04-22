@@ -8,7 +8,14 @@ const HEIGHT = WIDTH * 1.618;
 const PADDING = 12;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    shadowColor: Colors.medium,
+    shadowOpacity: 0.6,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+  },
   background: {
     width: 148,
     marginRight: PADDING,
@@ -36,18 +43,20 @@ const styles = StyleSheet.create({
 
 export function MealPosterItem() {
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../../assets/images/hamburger-and-fries.jpg")}
-    >
-      <LinearGradient
-        style={{ padding: PADDING }}
-        colors={["transparent", Colors.dark]}
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.background}
+        source={require("../../assets/images/hamburger-and-fries.jpg")}
       >
-        <View style={styles.bar}></View>
-        <Text style={styles.title}>Greek Style</Text>
-        <Text style={styles.place}>34 Places</Text>
-      </LinearGradient>
-    </ImageBackground>
+        <LinearGradient
+          style={{ padding: PADDING }}
+          colors={["transparent", Colors.dark]}
+        >
+          <View style={styles.bar}></View>
+          <Text style={styles.title}>Greek Style</Text>
+          <Text style={styles.place}>34 Places</Text>
+        </LinearGradient>
+      </ImageBackground>
+    </View>
   );
 }

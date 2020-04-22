@@ -1,22 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableHighlight, View } from "react-native";
 import { Typography, Colors } from "../themes";
 import SvgUri from "react-native-svg-uri";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
-    borderRadius: 6,
-    alignItems: "center",
-    width: 148,
-    marginRight: 12,
-    padding: 10,
-    shadowColor: Colors.medium,
-    shadowOpacity: 0.6,
     shadowOffset: {
       width: 0,
       height: 2,
     },
+    shadowColor: Colors.medium,
+    shadowOpacity: 1,
+  },
+  touchable: {
+    backgroundColor: "#fff",
+    marginRight: 12,
+    borderRadius: 6,
+    width: 148,
+    padding: 10,
+  },
+  wrapper: {
+    alignItems: "center",
   },
   title: {
     fontSize: Typography.stronger,
@@ -28,13 +32,22 @@ const styles = StyleSheet.create({
 export function DiscoverItem() {
   return (
     <View style={styles.container}>
-      <SvgUri
-        width="60"
-        height="100"
-        source={require("../../assets/icons/covered-food-plate.svg")}
-      />
-      <Text style={styles.title}>Bars & Hotels</Text>
-      <Text style={styles.subtitle}>28 Place</Text>
+      <TouchableHighlight
+        style={styles.touchable}
+        activeOpacity={0.6}
+        underlayColor={Colors.accent}
+        onPress={() => {}}
+      >
+        <View style={styles.wrapper}>
+          <SvgUri
+            width="60"
+            height="100"
+            source={require("../../assets/icons/covered-food-plate.svg")}
+          />
+          <Text style={styles.title}>Bars & Hotels</Text>
+          <Text style={styles.subtitle}>28 Place</Text>
+        </View>
+      </TouchableHighlight>
     </View>
   );
 }

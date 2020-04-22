@@ -11,19 +11,19 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 6,
     backgroundColor: "#fff",
+    width: WIDTH,
     shadowColor: Colors.medium,
     shadowOpacity: 0.6,
-    width: WIDTH,
     shadowOffset: {
       width: 0,
       height: 2,
     },
     marginRight: PADDING,
-    minHeight: 170
+    minHeight: 192
   },
   thumbnail: {
     width: WIDTH,
-    height: WIDTH / 1.618,
+    height: WIDTH * 3 / 4,
     borderTopRightRadius: 6,
     borderTopLeftRadius: 6,
   },
