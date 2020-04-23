@@ -1,6 +1,6 @@
 import * as React from "react";
-import { StyleSheet, SafeAreaView } from "react-native";
-import { StyleDiscoverScreen } from "./src/screens/StyleDiscoverScreen";
+import { StyleSheet, View } from "react-native";
+import { TrendingScreen } from "./src/screens";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.appContainer}>
-      <StyleDiscoverScreen></StyleDiscoverScreen>
-    </SafeAreaView>
+    <View style={styles.appContainer}>
+      <TrendingScreen></TrendingScreen>
+    </View>
   );
 }
