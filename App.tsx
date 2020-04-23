@@ -4,10 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { IntroSliderScreen } from "./src/screens";
 import { TabsStackScreen } from "./src/stacks/TabsStack";
+import { RootStackScreen } from "./src/stacks/RootStack";
+import { navigationRef } from "./src/@common";
+import { Colors } from "./src/themes";
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
+    backgroundColor: Colors.white
   },
 });
 
@@ -26,13 +30,21 @@ export default function App() {
       {!isPassIntro ? (
         <IntroSliderScreen onDone={() => setIsPassIntro(true)} />
       ) : (
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <AppStack.Navigator {...navigationOptions}>
             <AppStack.Screen
               options={navigationOptions}
               name="Main"
               component={TabsStackScreen}
             />
+
+            <AppStack.Screen
+              name="Root"
+              options={{
+                headerShown: false
+              }}
+              component={RootStackScreen}
+            ></AppStack.Screen>
           </AppStack.Navigator>
         </NavigationContainer>
       )}

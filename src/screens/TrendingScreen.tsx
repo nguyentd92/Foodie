@@ -55,7 +55,6 @@ export function TrendingScreen() {
         style={styles.banner}
         source={require("../../assets/images/full-grill-full-of-meat-and-veggies.jpg")}
       ></ImageBackground>
-
       <View style={styles.header}>
         <Text style={styles.pageTitle}>Trending</Text>
 
@@ -68,17 +67,13 @@ export function TrendingScreen() {
         </View>
       </View>
 
-      <FlatList
-        data={restaurantList}
-        keyExtractor={(item) => `trend${item.id}`}
-        renderItem={({ item }) => renderTrend(item)}
-      />
+      {restaurantList.map(restaurant => renderTrend(restaurant))}
     </ScrollView>
   );
 }
 
 function renderTrend(data: Restaurant) {
-  return <View>
+  return <View key={`trend${data.id}`}>
     <RestaurantExpandItem thumbnailMode data={data}/>
   </View>
 }

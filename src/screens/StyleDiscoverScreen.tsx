@@ -20,8 +20,7 @@ const { width, height } = Dimensions.get("window");
 const PADDING = 12;
 
 const styles = StyleSheet.create({
-  pageContainer: {
-  },
+  pageContainer: {},
   gridContainer: {
     margin: 12,
     minHeight: height,
@@ -79,17 +78,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: 12,
-    marginVertical: 6
+    marginVertical: 6,
   },
   endSection: {
-    marginBottom: 48
-  }
+    marginBottom: 48,
+  },
 });
 
 const initialRestaurants: Array<Restaurant> = restaurants;
 const initialFootTypeList: Array<FoodType> = foodTypes;
 
-export function StyleDiscoverScreen() {
+export function StyleDiscoverScreen({ navigation }: any) {
   const [restaurantList, setRestaurantList] = useState(initialRestaurants);
 
   const [foodTypeList, setFoodTypeList] = useState(initialFootTypeList);
@@ -117,7 +116,7 @@ export function StyleDiscoverScreen() {
       </ImageBackground>
 
       <View style={styles.popularContainer}>
-        {renderSeeAllButton()}
+        {renderSeeAllButton({navigation, route: 'Trending'})}
         <Text style={styles.popularTitle}>Most Popular</Text>
         <FlatList
           style={styles.popularScroll}
@@ -180,9 +179,12 @@ function renderPhoto(item: string, index: number) {
   );
 }
 
-function renderSeeAllButton() {
+function renderSeeAllButton({ navigation, route, stack }: any = {}) {
   return (
-    <TouchableOpacity style={styles.seeAll}>
+    <TouchableOpacity
+      style={styles.seeAll}
+      onPress={() => navigation ? navigation.push(route) : null}
+    >
       <Text style={styles.seeAllText}>See all</Text>
     </TouchableOpacity>
   );

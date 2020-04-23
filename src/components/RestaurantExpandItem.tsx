@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, Image, StyleSheet, Text } from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Restaurant } from "../@domain";
 
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import { Typography, Colors } from "../themes";
+import { navigate } from "../@common";
 
 const THUMBNAIL_SIDE = 96;
 const PADDING = 12
@@ -87,7 +88,7 @@ export function RestaurantExpandItem(props: IRestaurantItemProps) {
   const {thumbnailMode, data} = props
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={() => navigate("Root", {screen: "RestaurantInfo"})} activeOpacity={0.6} style={styles.container}>
       {thumbnailMode ? thumbnail : null}
 
       <View style={styles.detailsWrapper}>
@@ -103,6 +104,6 @@ export function RestaurantExpandItem(props: IRestaurantItemProps) {
       </View>
 
       {bookmarkIcon}
-    </View>
+    </TouchableOpacity>
   );
 }
