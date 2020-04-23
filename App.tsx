@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { TrendingScreen } from "./src/screens";
+import { TrendingScreen, ListRestaurantScreen } from "./src/screens";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 export default function App() {
   return (
     <View style={styles.appContainer}>
-      <TrendingScreen></TrendingScreen>
+      <ListRestaurantScreen></ListRestaurantScreen>
     </View>
   );
 }
