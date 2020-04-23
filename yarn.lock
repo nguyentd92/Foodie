@@ -1420,6 +1420,14 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.1.tgz#937fab3194766256ee09fcd40b781740758617e7"
   integrity sha512-lhbQXx9HKZAPgBkISrBcmAcMpZsmpe/Cd/hY7LGZS5OfkySUBItnPZHgQPssWYUET8elF+yCFBbP1Q0RZPTdaw==
 
+"@types/react-native-star-rating@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native-star-rating/-/react-native-star-rating-1.1.1.tgz#cd4cff18f118efb3093e0c3823bcd39befa9f6fb"
+  integrity sha512-53AxyiWDKWOO0NG4LJr/LTcUPvPx5d/r/bXyWjr5/4pfne2n8h2TWcHUuCCi6MDbvuWgtBMxWGRxW3fq9S1ZCw==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
 "@types/react-native-vector-icons@^6.4.5":
   version "6.4.5"
   resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.5.tgz#74cbfc564bd8435e43ad6728572a0e5b49c335d1"

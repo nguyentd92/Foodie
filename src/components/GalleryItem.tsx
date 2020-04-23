@@ -1,20 +1,22 @@
 import React from "react";
-import { View, Image, StyleSheet, ImageBackground, Text } from "react-native";
+import {
+  View,
+  Image,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import { Colors, Typography } from "../themes";
-
-const WIDTH = 148;
 
 const styles = StyleSheet.create({
   container: {
-    width: WIDTH,
-    height: WIDTH,
-    marginRight: 12,
     borderRadius: 6,
     overflow: "hidden",
   },
   overlay: {
     backgroundColor: "rgba(0,0,0,.5)",
-    height: WIDTH,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -25,25 +27,29 @@ const styles = StyleSheet.create({
 });
 
 interface GalleryProps {
-  moreCount?: number
+  moreCount?: number;
+  uri: string;
+  size: number;
 }
 
 export function GalleryItem(props: GalleryProps) {
-         const { moreCount } = props;
+  const { moreCount, size } = props;
 
-         return (
-           <ImageBackground
-             style={styles.container}
-             source={require("../../assets/images/fresh-appetizers-cocktails.jpg")}
-           >
-             {moreCount ? renderOverlay(moreCount) : null}
-           </ImageBackground>
-         );
-       }
-
-function renderOverlay(count: number) {
   return (
-    <View style={styles.overlay}>
+    <TouchableOpacity activeOpacity={.5}>
+      <ImageBackground
+        style={{ ...styles.container, width: size, height: size }}
+        source={require("../../assets/images/fresh-appetizers-cocktails.jpg")}
+      >
+        {moreCount ? renderOverlay(moreCount, size) : null}
+      </ImageBackground>
+    </TouchableOpacity>
+  );
+}
+
+function renderOverlay(count: number, size: number) {
+  return (
+    <View style={{ ...styles.overlay, width: size, height: size }}>
       <Text style={styles.text}>{count}+</Text>
     </View>
   );

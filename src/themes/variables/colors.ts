@@ -7,5 +7,7 @@ export const Colors = {
     pearl: "rgb(105,187,191)",
     pink: "rgb(227,173,160)",
     success: '',
-    error: ''
+    error: '',
+    white: '#fff',
+    black: '#000'
 }

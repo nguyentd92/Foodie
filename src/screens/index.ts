@@ -8,3 +8,4 @@ export * from "./CollectionsScreen";
 export * from "./StyleDiscoverScreen";
 export * from "./TrendingScreen";
 export * from "./ListRestaurantScreen";
+export * from "./RestaurantInfoScreen";

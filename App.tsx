@@ -1,6 +1,6 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
-import { TrendingScreen, ListRestaurantScreen } from "./src/screens";
+import { StyleSheet, View, StatusBar } from "react-native";
+import { TrendingScreen, ListRestaurantScreen, RestaurantInfoScreen } from "./src/screens";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -9,9 +9,12 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  
   return (
     <View style={styles.appContainer}>
-      <ListRestaurantScreen></ListRestaurantScreen>
+      <StatusBar barStyle='light-content'/>
+      
+      <RestaurantInfoScreen></RestaurantInfoScreen>
     </View>
   );
 }
