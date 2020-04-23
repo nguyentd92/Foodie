@@ -56,8 +56,7 @@ export function ListRestaurantScreen() {
         style={styles.banner}
         source={require("../../assets/images/full-grill-full-of-meat-and-veggies.jpg")}
       >
-          <Text style={styles.pageTitle}>Asian
-          Restaurants</Text>
+        <Text style={styles.pageTitle}>Asian Restaurants</Text>
       </ImageBackground>
 
       <View style={styles.nav}>
@@ -68,16 +67,13 @@ export function ListRestaurantScreen() {
         </TouchableOpacity>
       </View>
 
-      <FlatList
-    data={restaurantList}
-    keyExtractor={item => `restaurant${item.id}`}
-    renderItem={({item}) => renderRestaurant(item)}/>
+      {restaurantList.map(restaurant => renderRestaurant(restaurant))}
     </ScrollView>
   );
 }
 
 function renderRestaurant(data: Restaurant) {
-    return <View>
+    return <View key={`restaurant${data.id}`}>
         <RestaurantExpandItem data={data}/>
     </View>
 }

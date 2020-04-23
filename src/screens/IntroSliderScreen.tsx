@@ -42,7 +42,7 @@ const slides = [
   },
 ];
 
-const {width, height} = Dimensions.get('window')
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   pageContainer: {
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     position: "absolute",
-    top: height * 64 / 100,
+    top: (height * 64) / 100,
     backgroundColor: Colors.white,
     borderRadius: 2,
     width: width - 32,
-    margin: 16
+    margin: 16,
   },
   loginButtonText: {
     color: Colors.dark,
@@ -85,13 +85,7 @@ const styles = StyleSheet.create({
   },
 });
 
-interface IntroProps {
-  onDone: any;
-}
-
-export function IntroSliderScreen(props: IntroProps) {
-  const { onDone } = props;
-
+export function IntroSliderScreen({ navigation, onDone }: any) {
   return (
     <View style={styles.pageContainer}>
       <AppIntroSlider
@@ -99,6 +93,7 @@ export function IntroSliderScreen(props: IntroProps) {
         renderItem={renderItem}
         data={slides}
         onDone={onDone}
+        // onDone={() => navigation.navigate("Main", { screen: "Home" })}
       />
 
       <TouchableOpacity style={[buttonStyles.expandButton, styles.loginButton]}>

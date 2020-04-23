@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.2.7",
     "@react-navigation/native": "^5.1.6",
-    "@types/react-native-vector-icons": "^6.4.5",
+    "@react-navigation/stack": "^5.2.13",
     "expo": "~37.0.3",
     "expo-updates": "~0.1.0",
     "react": "~16.9.0",
@@ -31,9 +32,11 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@types/": "react-navigation/stack",
     "@types/react": "^16.9.34",
     "@types/react-native": "^0.62.2",
     "@types/react-native-star-rating": "^1.1.1",
+    "@types/react-native-vector-icons": "^6.4.5",
     "babel-jest": "~25.2.6",
     "jest": "~25.2.6",
     "react-native-typescript-transformer": "^1.2.13",
