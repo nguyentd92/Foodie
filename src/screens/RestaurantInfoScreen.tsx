@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
     margin: 16,
     marginBottom: 100,
     color: Colors.pearl,
-    fontWeight: "700"
-  }
+    fontWeight: "700",
+  },
 });
 
 interface SocialButton {
@@ -211,11 +211,7 @@ export function RestaurantInfoScreen() {
       <View style={styles.photos}>
         <Text style={styles.photoTitle}>Reviews</Text>
 
-        <FlatList
-          data={reviews}
-          keyExtractor={(item) => `review${item.id}`}
-          renderItem={({ item }) => renderReview(item)}
-        />
+        {reviews.map((review) => renderReview(review))}
       </View>
 
       <View>
@@ -230,7 +226,7 @@ export function RestaurantInfoScreen() {
 function renderSocialButton(button: SocialButton) {
   const { title, icon } = button;
   return (
-    <TouchableOpacity style={styles.btnSocial}>
+    <TouchableOpacity key={title} style={styles.btnSocial}>
       <Icon name={icon} light color={Colors.dark} size={22} />
       <Text style={styles.btnSocialText}>{title}</Text>
     </TouchableOpacity>
@@ -241,10 +237,9 @@ const photoSize = (width - 16 * 2 - 24) / 4;
 
 function renderPhoto(item: string, index: number) {
   return (
-    <View>
+    <View key={`photo${index}`}>
       <GalleryItem
         moreCount={index == 3 ? 6 : undefined}
-        key={item}
         size={photoSize}
         uri={item}
       />
@@ -254,8 +249,8 @@ function renderPhoto(item: string, index: number) {
 
 function renderReview(data: Review) {
   return (
-    <View style={styles.reviewWrapper}>
-      <ReviewItem key={`review${data.id}`} data={data} />
+    <View key={`review${data.id}`} style={styles.reviewWrapper}>
+      <ReviewItem data={data} />
     </View>
   );
 }

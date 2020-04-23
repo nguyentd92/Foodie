@@ -9,3 +9,4 @@ export * from "./StyleDiscoverScreen";
 export * from "./TrendingScreen";
 export * from "./ListRestaurantScreen";
 export * from "./RestaurantInfoScreen";
+export * from "./IntroSliderScreen";

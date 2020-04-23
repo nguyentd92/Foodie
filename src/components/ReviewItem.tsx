@@ -182,7 +182,7 @@ export function ReviewItem(props: ReviewItemProps) {
 
 function renderPhoto(url: string) {
   return (
-    <View style={styles.photos}>
+    <View key={`photo${url}`} style={styles.photos}>
       <GalleryItem size={photoSize} uri={url} />
     </View>
   );
