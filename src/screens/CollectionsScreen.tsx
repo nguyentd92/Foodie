@@ -12,33 +12,9 @@ import { FoodType } from "../@domain";
 import { MealPosterItem } from "../components";
 import LinearGradient from "react-native-linear-gradient";
 import { Typography, Colors } from "../themes";
+import { foodTypes } from "../@mock";
 
-const initialCollections: Array<FoodType> = [
-  {
-    id: 1,
-    name: "Greek Style",
-    countPlace: 34,
-    imgCover: "",
-  },
-  {
-    id: 2,
-    name: "Burgers",
-    countPlace: 40,
-    imgCover: "",
-  },
-  {
-    id: 3,
-    name: "Thai",
-    imgCover: "",
-    countPlace: 17,
-  },
-  {
-    id: 4,
-    name: "Chinese",
-    countPlace: 32,
-    imgCover: "",
-  },
-];
+const initialCollections: Array<FoodType> = foodTypes
 
 const { width, height } = Dimensions.get("window");
 const PADDING = 12

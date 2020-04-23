@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Platform, StyleSheet, Text, View, SafeAreaView } from "react-native";
-import { ComponentsScreen, LoginScreen, RegisterScreen, ForgotPasswordScreen, FavoriteScreen, CollectionsScreen } from "./src/screens";
-import { DiscoverScreen } from "./src/screens/DiscoverScreen";
+import { StyleSheet, SafeAreaView } from "react-native";
+import { StyleDiscoverScreen } from "./src/screens/StyleDiscoverScreen";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -12,7 +11,7 @@ const styles = StyleSheet.create({
 export default function App() {
   return (
     <SafeAreaView style={styles.appContainer}>
-      <CollectionsScreen></CollectionsScreen>
+      <StyleDiscoverScreen></StyleDiscoverScreen>
     </SafeAreaView>
   );
 }

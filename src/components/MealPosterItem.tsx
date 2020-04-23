@@ -10,7 +10,6 @@ const PADDING = 12;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 6,
     shadowColor: Colors.medium,
     shadowOpacity: 0.6,
     shadowOffset: {
@@ -19,6 +18,7 @@ const styles = StyleSheet.create({
     },
   },
   background: {
+    minWidth: WIDTH,
     height: HEIGHT,
     borderRadius: 6,
     overflow: "hidden",
