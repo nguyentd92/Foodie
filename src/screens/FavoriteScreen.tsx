@@ -43,6 +43,7 @@ export function FavoriteScreen() {
 
   return (
     <FlatList
+      style={{paddingTop: 12}}
       data={favoriteList}
       keyExtractor={(item) => `favorite${item.id}`}
       renderItem={({item}) => renderItem(item)}

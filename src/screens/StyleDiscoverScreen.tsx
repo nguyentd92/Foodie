@@ -14,11 +14,14 @@ import LinearGradient from "react-native-linear-gradient";
 import { Colors, Typography } from "../themes";
 import { RestaurantItem, MealPosterItem, GalleryItem } from "../components";
 import { restaurants, foodTypes } from "../@mock";
+import { photos } from "../@mock/photo.mock";
 
 const { width, height } = Dimensions.get("window");
 const PADDING = 12;
 
 const styles = StyleSheet.create({
+  pageContainer: {
+  },
   gridContainer: {
     margin: 12,
     minHeight: height,
@@ -66,12 +69,21 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 1,
     right: 12,
-    zIndex: 10
+    zIndex: 10,
   },
   seeAllText: {
     fontWeight: "500",
-    color: Colors.pearl
+    color: Colors.pearl,
   },
+  photoContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 12,
+    marginVertical: 6
+  },
+  endSection: {
+    marginBottom: 48
+  }
 });
 
 const initialRestaurants: Array<Restaurant> = restaurants;
@@ -90,7 +102,7 @@ export function StyleDiscoverScreen() {
   });
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.pageContainer}>
       <ImageBackground
         source={require("../../assets/images/healthy-breakfast.jpg")}
         style={styles.banner}
@@ -131,17 +143,13 @@ export function StyleDiscoverScreen() {
         />
       </View>
 
-      <View style={[styles.section]}>
+      <View style={[styles.section, styles.endSection]}>
         {renderSeeAllButton()}
         <Text style={styles.popularTitle}>Popular Restaurants</Text>
-        <FlatList
-          style={styles.popularScroll}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={restaurantList}
-          keyExtractor={(item) => `restaurant${item.id}`}
-          renderItem={({ item }) => renderRestaurant(item)}
-        />
+
+        <View style={styles.photoContainer}>
+          {photos.map((photo, index) => renderPhoto(photo, index))}
+        </View>
       </View>
     </ScrollView>
   );
@@ -159,10 +167,15 @@ function renderMealDeal(data: any) {
   );
 }
 
-function renderRestaurant(data: Restaurant) {
+function renderPhoto(item: string, index: number) {
+  const size = (width - 24 - 24) / 4;
   return (
-    <View>
-      <GalleryItem moreCount={11} />
+    <View key={`photo${index}`}>
+      <GalleryItem
+        moreCount={index == 3 ? 6 : undefined}
+        size={size}
+        uri={item}
+      />
     </View>
   );
 }

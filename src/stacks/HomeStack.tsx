@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ListRestaurantScreen } from "../screens";
+import { ListRestaurantScreen, StyleDiscoverScreen } from "../screens";
 
 const HomeStack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export function HomeStackScreen() {
           headerShown: false,
         }}
         name="Place"
-        component={ListRestaurantScreen}
+        component={StyleDiscoverScreen}
       ></HomeStack.Screen>
     </HomeStack.Navigator>
   );

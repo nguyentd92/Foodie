@@ -38,7 +38,7 @@ const initialDiscover: Discover[] = [
 
 const styles = StyleSheet.create({
     gridContainer: {
-        margin: 12
+        padding: 12
     }
 })
 
